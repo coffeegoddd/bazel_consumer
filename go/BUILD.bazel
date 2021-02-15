@@ -5,6 +5,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/reltuk/bazel_consumer/go",
     visibility = ["//visibility:private"],
+    deps = ["@com_github_reltuk_bazel_consumed_go//pkg/message:go_default_library"],
 )
 
 go_binary(

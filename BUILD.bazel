@@ -1,3 +1,4 @@
+load("@rules_pkg//:pkg.bzl", "pkg_tar")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/reltuk/bazel_consumer
@@ -5,3 +6,8 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 # gazelle:proto disable_global
 # gazelle:go_naming_convention go_default_library
 gazelle(name = "gazelle")
+
+pkg_tar(
+    name = "message_resources",
+    srcs = ["@com_github_reltuk_bazel_consumed_go//pkg:resources"],
+)
